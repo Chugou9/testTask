@@ -18,11 +18,27 @@ module.exports = {
     contentBase: "./dist"
   },
   module: {
+  //   preloaders: [// esLint
+  //   {
+  //     test: /\.js$/,
+  //     loders: ["eslint"],
+  //     include: [
+  //       path.resolve(__dirname, "src"),
+  //     ],
+  //   }
+  // ],
     rules: [
       { test: /\.js$/, 
         exclude: /node_modules/, 
-        loader: "babel-loader" 
+        use: [
+          "babel-loader",
+          "eslint-loader",
+        ] 
         },
+        // { test: /\.js$/, 
+        //   exclude: /node_modules/, 
+        //   loader: "eslint" 
+        //   },
       {
         test: /\.css$/,
         use: [
