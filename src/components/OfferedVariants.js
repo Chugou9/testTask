@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as formActions from "../actions/formActions";
+import { Grid, Col, Row } from "react-bootstrap";
 
 
 class OfferedVariants extends React.Component {  
@@ -22,14 +23,14 @@ class OfferedVariants extends React.Component {
     let { countries } = this.props.table;  
     let result = [];  
     const loading = (userInput.length && countries.length) ? "offeredCountries" : "offeredCountriesDisabled";    
-    countries.filter( (item, index) => (result.push(<tr key={index}><th>{item}</th></tr> )));
+    countries.filter( (item, index) => (result.push(<Col xs={4} md={2} key={index}>{item}</Col> )));
 
     return (
-      <table className={loading}>
-        <tbody >
+      <Grid id="grid" className={loading}>
+        <Row className="show-grid">
           {result}                  
-        </tbody>
-      </table>
+        </Row>
+      </Grid>
     );
   }
 }

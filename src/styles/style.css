@@ -1,8 +1,8 @@
-#root {
+/* #root {
   width: 60%;
   margin: 10px auto;
   color: rgba(245, 245, 245, 0.76);
-  background: url('../images/forest.jpg');
+  /* background: url('../images/forest.jpg'); 
   text-align: center;
 }
 img {
@@ -20,12 +20,15 @@ img {
   background-color: gainsboro;
   disable :disabled;
 } */
-/* table {
+#formControl {
+  margin: 25px 5px;
+}
+form {
   margin: 0 auto;
-  width: 70%;
-  border: 1px solid white;
-} */
-th,td {
+  width: 40%;
+  /* border: 1px solid rgb(44, 42, 42); */
+} 
+/* th,td {
   widows: 60%;
   margin: 5px 5px 5px 5px;
   border-bottom: 1px solid white;
@@ -34,7 +37,7 @@ th,td {
 }
 .greeting {
   color: yellow;
-}
+} */
 
 .offeredCountries {
   margin: 0 auto;

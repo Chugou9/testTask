@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Spin from "./Spin";
 import { bindActionCreators } from "redux";
 import * as formActions from "../actions/formActions";
+import { FormControl, FormGroup, HelpBlock, Row } from "react-bootstrap";
 
 class UserInput extends Component {
   constructor(props) {
@@ -17,20 +18,24 @@ class UserInput extends Component {
     const { userInput } = this.props.field;
    
     return (
-      <div>
-     
-        <input
-          className="inputCountry" 
-          type="text"
-          value={userInput}
-          placeholder="Введите название страны"
-          onChange={this.handleChange}
-          readOnly={isLoading} 
-        />  
-        <Spin 
-         spin={isLoading}
-         /> 
-      </div> 
+      <form>
+        <FormGroup>   
+          <Row>  
+          <FormControl md={1} id="formControl"
+            className="inputCountry" 
+            type="text"
+            value={userInput}
+            placeholder="Введите название страны"
+            onChange={this.handleChange}
+            readOnly={isLoading} 
+          />  
+          <Spin md={2}
+            spin={isLoading}
+          /> 
+          </Row>
+         <HelpBlock>Внимательнее заполняйте поле</HelpBlock>
+      </FormGroup> 
+      </form>
     );
   }
 }
